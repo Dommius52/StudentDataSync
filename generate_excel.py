@@ -1,11 +1,12 @@
-from faker import Faker
-import openpyxl
+from faker import Faker  # Libreria che genera dati casuali
+import openpyxl  # Genera un file Excel dei dati creati
 from openpyxl.styles import Font
+from openpyxl.utils import get_column_letter
 import os
 
-# Funzione per generare dati degli studenti
+# Funzione per generare dati casuali degli studenti
 def generate_student_data(num_students):
-    fake = Faker('it_IT')
+    fake = Faker('it_IT')  # Opzione che consente di generare dati italiani
     student_data = []
     
     for _ in range(num_students):
@@ -27,29 +28,30 @@ def write_to_excel(file_name, headers, data):
     wb = openpyxl.Workbook()
     ws = wb.active
     ws.title = "Utenti"
-    
+
     ws.append(headers)
-    
+
     for col_num, header in enumerate(headers, 1):
         cell = ws.cell(row=1, column=col_num, value=header)
         cell.font = Font(bold=True)
-    
+
     for row in data:
         ws.append(row)
-    
+
     # Assicurati che la directory esista
     output_directory = os.path.dirname(file_name)
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
-    
-    # Auto-regola la larghezza delle colonne
-    for col in ws.columns:
+
+    # Regola la larghezza delle colonne in base ai dati
+    for col in ws.iter_cols():
         max_length = 0
-        column = col[0].column_letter  # Prende la lettera della colonna
+        column = get_column_letter(col[0].column)  # Prende la lettera della colonna
         for cell in col:
             try:
-                if len(str(cell.value)) > max_length:
-                    max_length = len(cell.value)
+                if cell.value:
+                    if len(str(cell.value)) > max_length:
+                        max_length = len(cell.value)
             except:
                 pass
         adjusted_width = max_length + 2
