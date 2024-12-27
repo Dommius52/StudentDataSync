@@ -66,4 +66,4 @@ pip install faker openpyxl pandas
 
 ## Autore
 
-Questo progetto è stato sviluppato da [Domenico Emilio Ietto]
+Questo progetto è stato sviluppato da **Domenico Emilio Ietto**
