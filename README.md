@@ -13,7 +13,7 @@ Il progetto è composto da due script principali:
 ## Struttura del Progetto
 
 - `generate_data.py`: Script per generare dati casuali degli studenti e salvarli in un file Excel.
-- `sync_data.py`: Script per sincronizzare i dati tra un file Excel e un database SQLite.
+- `sync_data.py`: Script per creare tabella SQL e sincronizzare i dati tra il file Excel e un database SQLite.
 
 ## Come Eseguire il Progetto
 
