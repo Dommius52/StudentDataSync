@@ -68,13 +68,9 @@ pip install faker openpyxl pandas
 Questo progetto è stato sviluppato da **Domenico Emilio Ietto**
 
 
-Certainly! Here’s the translated and adapted version of your project description, ready to be included as a README file for your application:
-
----
-
 ### Project Work ###
 **EN**
-##**Description**
+##Description
 Final project for the third year, Computer Science faculty L-31 Unipegaso. The objective is to create a system to generate random data, in my case, of University students, aged between 18 and 35, and transfer it to an Excel file and an SQL database.
 
 **The project consists of two main scripts:**
