@@ -1,5 +1,5 @@
 ###Project Work###
-**IT**
+## IT
 ## Descrizione
 
 Progetto conclusivo Terzo anno, facoltà di informatica L-31 Unipegaso. 
@@ -69,8 +69,8 @@ Questo progetto è stato sviluppato da **Domenico Emilio Ietto**
 
 
 ### Project Work ###
-**EN**
-##Description
+## EN
+## Description
 Final project for the third year, Computer Science faculty L-31 Unipegaso. The objective is to create a system to generate random data, in my case, of University students, aged between 18 and 35, and transfer it to an Excel file and an SQL database.
 
 **The project consists of two main scripts:**
