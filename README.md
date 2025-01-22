@@ -19,7 +19,7 @@ Il progetto è composto da due script principali:
 
 ### Prerequisiti
 
-Assicurati di avere installato i seguenti pacchetti:
+Assicurarsi di avere installato i seguenti pacchetti per l'utilizzo delle librerie':
 
 - `faker`
 - `openpyxl`
@@ -60,7 +60,6 @@ pip install faker openpyxl pandas
 ### Possibili Miglioramenti ###
 
 - Aggiungere la validazione dei dati per garantire l'integrità dei dati inseriti nel database.
-- Aggiungere funzioni che gestiscano le eccezioni, come blocco `try`
 - Implementare una GUI per semplificare l'interazione con il sistema di sincronizzazione.
 
 
