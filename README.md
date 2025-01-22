@@ -71,17 +71,19 @@ Questo progetto è stato sviluppato da **Domenico Emilio Ietto**
 **Project Work**
 ## EN
 ## Description
-Final project for the third year, Computer Science faculty L-31 Unipegaso. The objective is to create a system to generate random data, in my case, of University students, aged between 18 and 35, and transfer it to an Excel file and an SQL database.
 
-**The project consists of two main scripts:**
+Final project for the third year, Computer Science faculty L-31 Unipegaso. 
+The objective is to create a system to generate random data, in my case, of University students, aged between 18 and 35, and transfer it to an Excel file and an SQL database.
 
-1. **Data Generation and Excel File Creation**: Uses the Faker library to generate random data and saves it to an Excel file.
+The project consists of two main scripts:
+
+1. **Data Generation and Excel File Creation**: Uses the `Faker` library to generate random data and saves it to an Excel file.
 2. **Data Synchronization between Excel and SQLite**: Synchronizes data between an Excel file and an SQLite database in real-time.
 
 ## Project Structure
 
-- **generate_data.py**: Script to generate random student data and save it to an Excel file.
-- **sync_data.py**: Script to create an SQL table and synchronize data between the Excel file and an SQLite database.
+- `generate_data.py`: Script to generate random student data and save it to an Excel file.
+- `sync_data.py`: Script to create an SQL table and synchronize data between the Excel file and an SQLite database.
 
 ## How to Run the Project
 
@@ -100,34 +102,36 @@ pip install faker openpyxl pandas
 
 ### Execution
 
-- **Generate Student Data**: Run `generate_data.py` to create an Excel file with student data.
-  
+1.  **Generate Student Data**:
+2.  Run `generate_data.py` to create an Excel file with student data.
 ```bash
 python generate_data.py
 ```
 
-- **Synchronize Data**: Run `sync_data.py` to start data synchronization between the Excel file and the SQLite database.
-
+2. **Synchronize Data**:
+3. Run `sync_data.py` to start data synchronization between the Excel file and the SQLite database.
 ```bash
 python sync_data.py
 ```
 
-**Code Functionality**
+## Code Functionality
 
-- **generate_data.py**
+### `generate_data.py`
+
   - Uses the Faker library to generate data such as name, surname, date of birth, place of birth, tax code, email, phone contact, and residence address.
   - Saves this data in an Excel file using openpyxl.
 
-- **sync_data.py**
+### `sync_data.py`
+
   - Reads data from the Excel file and inserts it into an SQL table.
   - Continuously synchronizes data between the Excel file and the SQLite database by checking for changes every second.
 
-**Possible Improvements**
+### Possible Improvements ###
 
 - Add data validation to ensure the integrity of data entered into the database.
 - Implement a GUI to simplify interaction with the synchronization system.
 
-**Author**
-This project was developed by Domenico Emilio Ietto.
+## Author
+This project was developed by **Domenico Emilio Ietto**.
 
 
