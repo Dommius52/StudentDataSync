@@ -1,4 +1,4 @@
-###Project Work###
+**Project Work**
 ## IT
 ## Descrizione
 
@@ -68,7 +68,7 @@ pip install faker openpyxl pandas
 Questo progetto è stato sviluppato da **Domenico Emilio Ietto**
 
 
-### Project Work ###
+**Project Work**
 ## EN
 ## Description
 Final project for the third year, Computer Science faculty L-31 Unipegaso. The objective is to create a system to generate random data, in my case, of University students, aged between 18 and 35, and transfer it to an Excel file and an SQL database.
@@ -78,14 +78,14 @@ Final project for the third year, Computer Science faculty L-31 Unipegaso. The o
 1. **Data Generation and Excel File Creation**: Uses the Faker library to generate random data and saves it to an Excel file.
 2. **Data Synchronization between Excel and SQLite**: Synchronizes data between an Excel file and an SQLite database in real-time.
 
-**Project Structure**
+## Project Structure
 
 - **generate_data.py**: Script to generate random student data and save it to an Excel file.
 - **sync_data.py**: Script to create an SQL table and synchronize data between the Excel file and an SQLite database.
 
-**How to Run the Project**
+## How to Run the Project
 
-**Prerequisites**
+### Prerequisites
 Make sure to have the following packages installed:
 
 - `faker`
@@ -98,7 +98,7 @@ You can install them using pip:
 pip install faker openpyxl pandas
 ```
 
-**Execution**
+### Execution
 
 - **Generate Student Data**: Run `generate_data.py` to create an Excel file with student data.
   
