@@ -86,29 +86,29 @@ def synchronize_files(excel_file, db_file):
     last_excel_mod_time = os.path.getmtime(excel_file)
     last_db_mod_time = os.path.getmtime(db_file)
 
-    while True:
-        current_excel_mod_time = os.path.getmtime(excel_file)
-        current_db_mod_time = os.path.getmtime(db_file)
+    current_excel_mod_time = os.path.getmtime(excel_file)
+    current_db_mod_time = os.path.getmtime(db_file)
 
-        if current_excel_mod_time != last_excel_mod_time:
-            excel_to_sql(excel_file, db_file)
-            last_excel_mod_time = current_excel_mod_time
-            print("Database aggiornato dai dati Excel.")
+    if current_excel_mod_time != last_excel_mod_time:
+        excel_to_sql(excel_file, db_file)
+        last_excel_mod_time = current_excel_mod_time
+        print("Database aggiornato dai dati Excel.")
 
-        if current_db_mod_time != last_db_mod_time:
-            sql_to_excel(db_file, excel_file)
-            last_db_mod_time = current_db_mod_time
-            print("File Excel aggiornato dai dati del database.")
-
-        time.sleep(1)  # Controlla le modifiche ogni secondo
+    if current_db_mod_time != last_db_mod_time:
+        sql_to_excel(db_file, excel_file)
+        last_db_mod_time = current_db_mod_time
+        print("File Excel aggiornato dai dati del database.")
 
 # Parametri del file
 excel_file = 'C:/Users/39329/OneDrive/Desktop/UNIPEGASO/visualcode/StudentDataSync/utenti.xlsx'
 db_file = 'C:/Users/39329/OneDrive/Desktop/UNIPEGASO/visualcode/StudentDataSync/database.db'
 
-# Sincronizza i dati inizialmente
-excel_to_sql(excel_file, db_file)
-sql_to_excel(db_file, excel_file)
-
-# Avvia la sincronizzazione continua
-synchronize_files(excel_file, db_file)
+while True:
+    user_input = input("Premi 'u' per aggiornare i file o 'q' per uscire: ")
+    if user_input.lower() == 'u':
+        synchronize_files(excel_file, db_file)
+    elif user_input.lower() == 'q':
+        print("Sincronizzazione terminata.")
+        break
+    else:
+        print("Comando non riconosciuto. Riprova.")
