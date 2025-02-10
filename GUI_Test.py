@@ -4,6 +4,7 @@ import pandas as pd
 from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 from tkinter import Tk, Button, Label, messagebox
+from threading import Thread
 from generate_excel import generate_student_data, write_to_excel
 from generate_db import excel_to_sql
 from sync import synchronize_files
@@ -28,12 +29,16 @@ def esporta_in_sql():
         messagebox.showerror("Errore", f"Errore durante l'esportazione in SQL: {e}")
 
 # Funzione per sincronizzare i file
-def sincronizza():
+def start_sync():
     try:
         synchronize_files(excel_file, db_file)
         messagebox.showinfo("Sincronizza", "La sincronizzazione è stata completata correttamente!")
     except Exception as e:
         messagebox.showerror("Errore", f"Errore durante la sincronizzazione: {e}")
+
+# Funzione per uscire dal programma
+def exit_program():
+    root.quit()
 
 # Parametri del file
 excel_file = 'C:/Users/39329/OneDrive/Desktop/UNIPEGASO/visualcode/StudentDataSync/utenti.xlsx'
@@ -53,13 +58,10 @@ button_generate.pack(pady=10)
 button_export = Button(root, text="Esporta in SQL", command=esporta_in_sql)
 button_export.pack(pady=10)
 
-button_sync = Button(root, text="Sincronizza", command=sincronizza)
+button_sync = Button(root, text="Sincronizza", command=start_sync)
 button_sync.pack(pady=10)
 
-button_exit = Button(root, text="Esci", command=root.quit)
+button_exit = Button(root, text="Esci", command=exit_program)
 button_exit.pack(pady=10)
 
 root.mainloop()
-
-
-
