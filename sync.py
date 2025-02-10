@@ -81,6 +81,4 @@ def synchronize_files(excel_file, db_file):
 def synchronize_files_thread(excel_file, db_file):
     threading.Thread(target=synchronize_files, args=(excel_file, db_file), daemon=True).start()
 
-# Supponiamo che excel_file e db_file siano già definiti come i percorsi dei tuoi file
-# Quando il pulsante di sincronizzazione viene premuto:
-# synchronize_files_thread(excel_file, db_file)
+
