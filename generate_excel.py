@@ -62,8 +62,14 @@ def write_to_excel(file_name, headers, data):
     print(f"Il file Excel '{file_name}' è stato generato correttamente!")
 
 if __name__ == "__main__":
+     # Ottiene il percorso della directory corrente
+    current_directory = os.path.dirname(__file__)
+
+    # Costruisce il percorso del file dinamicamente
+    file_name = os.path.join(current_directory, 'utenti.xlsx')
+    
     num_students = 10
     headers = ["NOME", "COGNOME", "DATA DI NASCITA", "LUOGO DI NASCITA", "CODICE FISCALE", "EMAIL", "CONTATTO TELEFONICO", "RESIDENZA\\INDIRIZZO"]
     student_data = generate_student_data(num_students)
 
-    write_to_excel("C:/Users/39329/OneDrive/Desktop/UNIPEGASO/visualcode/StudentDataSync/utenti.xlsx", headers, student_data)
+    write_to_excel(file_name, headers, student_data)
