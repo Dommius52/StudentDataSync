@@ -1,5 +1,6 @@
 import pandas as pd
 import sqlite3
+import os
 
 # Funzione per leggere i dati dal file Excel e inserirli nella tabella SQL
 def excel_to_sql(excel_file, db_file):
@@ -47,6 +48,13 @@ def excel_to_sql(excel_file, db_file):
 
 # Esegui la generazione del database
 if __name__ == "__main__":
-    excel_file = 'C:/Users/39329/OneDrive/Desktop/UNIPEGASO/visualcode/StudentDataSync/utenti.xlsx'
-    db_file = 'C:/Users/39329/OneDrive/Desktop/UNIPEGASO/visualcode/StudentDataSync/database.db'
+    # Ottiene il percorso della directory corrente
+    current_directory = os.path.dirname(__file__)
+
+    # Percorso del file Excel dinamico
+    excel_file = os.path.join(current_directory, 'utenti.xlsx')
+
+    # Percorso del database dinamico
+    db_file = os.path.join(current_directory, 'database.db')
+  
     excel_to_sql(excel_file, db_file)
