@@ -41,8 +41,12 @@ def exit_program():
     root.quit()
 
 # Parametri del file
-excel_file = 'C:/Users/39329/OneDrive/Desktop/UNIPEGASO/visualcode/StudentDataSync/utenti.xlsx'
-db_file = 'C:/Users/39329/OneDrive/Desktop/UNIPEGASO/visualcode/StudentDataSync/database.db'
+# Ottiene il percorso della directory corrente
+current_directory = os.path.dirname(__file__)
+
+# Percorsi dei file dinamici
+excel_file = os.path.join(current_directory, 'utenti.xlsx')
+db_file = os.path.join(current_directory, 'database.db')
 
 # Configurazione GUI
 root = Tk()
